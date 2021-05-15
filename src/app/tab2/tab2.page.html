@@ -24,6 +24,12 @@
     </ion-row>
   </ion-grid><!-- ion-fab 标记  --></ion-content>
 
+  <ion-col size="6" 
+    *ngFor="let photo of photoService.photos; index as position">
+  <ion-img [src]="photo.webviewPath" 
+           (click)="showActionSheet(photo, position)"></ion-img>
+</ion-col>
+
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
